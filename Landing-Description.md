@@ -2,6 +2,8 @@
 
 **TL:DR**: Designs are available in the [Designs](#designs) section.
 
+_Go back to [README.md](README.md) for the main description._
+
 ### Project Initialization
 
 - **Initialize a Next.js project with TypeScript support.**
@@ -50,7 +52,16 @@
 - **On Form Submission**
 
   - Save the email to the MongoDB `waiting-list` collection following the provided schema.
-  - After the initial email submission, display a second form requesting the user's name, position (select list), company name, country (select list), and industry (select list), and update the existing MongoDB document. Provide options for position and industry select lists following the most standard options AI startups use. For the country select list options, you can use some publicly available API or just create example options yourself yourself.
+  - After the initial email submission, display a second form with not obligatory fields:
+    - the user's name (text input),
+    - position (select list),
+    - company name (text input),
+    - country (select list),
+    - and industry (select list),
+  - Remember to update the existing MongoDB document for the previously submitted email.
+  - Provide options for position and industry select lists following the most standard options AI startups use.
+  - For the country select list options, you can use some publicly available API or just create example options yourself yourself.
+  - At least one field is required for the second form to be valid.
 
 - **Button Text Changes**
 
