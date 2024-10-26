@@ -28,7 +28,7 @@ in Front-End development with Next.js, TailwindCSS, MongoDB Node.js Driver, and 
    - `cursor-composer` compares Cursor Composer + Cursor Tab autocomplete
    - `aider` compares Aider with Claude 3.5 Sonnet + VSCode & SuperMaven autocomplete
    - `claude-dev` compares Claude Dev (Cline) with Claude 3.5 Sonnet + VSCode & SuperMaven autocomplete
-   - `chatgpt-copy-paste` compares "traditional" ChatGPT + VSCode (copy/paste) & SuperMaven autocomplete
+   - `chatgpt-o1-copy-paste` compares "traditional" ChatGPT + VSCode (copy/paste) & SuperMaven autocomplete & Continue
 
 4. Folder structure:
    - `/public/images` contains Edukey logo, favicon and hero image in 2 sizes and in JPG and WebP format.
