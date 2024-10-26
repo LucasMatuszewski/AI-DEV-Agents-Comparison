@@ -44,3 +44,5 @@ This is the MongoDB validation schema for the `waiting-list` collection.
   }
 }
 ```
+
+Go back to [README.md](README.md) for the main description.
