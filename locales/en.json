@@ -1,0 +1,29 @@
+{
+  "isCooking": "is Cooking...",
+  "headerTitle": "AI Sales & Marketing Acceleration platform",
+  "headerSubtitle": "Be among the first to experience our cutting-edge AI platform that revolutionizes sales and marketing with Personal AI Trainers (realistic 3D avatars) and cutting-edge AI Automation Tools.",
+  "joinWaitingList": "Join our waiting list and step into the future:",
+  "emailPlaceholder": "Your email*",
+  "joinButton": "Join the revolution!",
+  "tellUsMoreButton": "Tell Us More About You",
+  "emailValidationError": "Please enter a valid email address.",
+  "thankYouMessage": "Thank you! We've saved your email. Please, could you tell us a bit more? It will help us decide who will be invited to the closed beta first.",
+  "thankYouAgainMessage": "Thank you again! You are on our waiting list",
+  "makingOfText": "This page was crafted with the power of AI. Read about the AI tools we used to build it:",
+  "aiTools": [
+    "How AI Built this Landing Page + GPT-4 o1 (manual copy/paste)",
+    "GitHub Copilot Workspace",
+    "Cursor AI Composer + Cursor Tab",
+    "Aider and ClaudeDev (Cline)"
+  ],
+  "footerText": "© 2023 Edukey AI. All rights reserved.",
+  "namePlaceholder": "Your name",
+  "positionPlaceholder": "Your position",
+  "companyPlaceholder": "Company name",
+  "countryPlaceholder": "Country",
+  "industryPlaceholder": "Industry",
+  "language": "EN",
+  "altText": "Cyberpunk chef crafting AI solutions in a futuristic Tokyo street at night.",
+  "titleTag": "Edukey AI – AI-Driven Sales Acceleration Platform",
+  "metaDescription": "Join Edukey AI's waiting list and be the first to revolutionize your sales and marketing with our AI-powered platform and 3D avatar trainers."
+}
