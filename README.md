@@ -31,9 +31,12 @@ in Front-End development with Next.js, TailwindCSS, MongoDB Node.js Driver, and 
    - `chatgpt-o1-copy-paste` compares "traditional" ChatGPT + VSCode (copy/paste) & SuperMaven autocomplete & Continue
 
 4. Folder structure:
+
    - `/public/images` contains Edukey logo, favicon and hero image in 2 sizes and in JPG and WebP format.
    - `.env` contains database connection string (you have `example.env` file to copy and rename).
    - `/locales` folder with empty `en.json` and `pl.json` files.
+
+5. MongoDB Validation Schema: See [MongoDB-Validation.md](MongoDB-Validation.md) file for the MongoDB validation schema for the `waiting-list` collection.
 
 ## Action Plan
 
