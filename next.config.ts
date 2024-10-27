@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import { NextConfig } from 'next';
+const createNextIntlPlugin = require('next-intl/plugin');
 
+// Initialize the plugin with the path to the config file
+// const withNextIntl = createNextIntlPlugin('./next-intl.config.js');
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {NextConfig} */
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

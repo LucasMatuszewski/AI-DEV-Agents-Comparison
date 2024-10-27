@@ -1,0 +1,38 @@
+{
+  "HomePage": {
+    "isCooking": "się gotuje...",
+    "headerTitle": "Platforma przyspieszająca sprzedaż i marketing dzięki AI",
+    "headerSubtitle": "Dołącz do pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki osobistym trenerom AI (realistyczne awatary 3D) i najnowocześniejszym narzędziom automatyzacji AI.",
+    "joinWaitingList": "Dołącz do naszej listy oczekujących i wkrocz w przyszłość:",
+    "emailPlaceholder": "Twój email*",
+    "joinButton": "Dołącz do rewolucji!",
+    "tellUsMoreButton": "Powiedz nam więcej o sobie",
+    "emailValidationError": "Proszę podać prawidłowy adres e-mail.",
+    "thankYouMessage": "Dziękujemy! Zapisaliśmy Twój email. Czy możesz powiedzieć nam trochę więcej? Pomoże nam to zdecydować, kto zostanie zaproszony do zamkniętej bety jako pierwszy.",
+    "thankYouAgainMessage": "Jeszcze raz dziękujemy! Jesteś na naszej listy oczekujących",
+    "makingOfText": "Ta strona została stworzona dzięki mocy AI. Przeczytaj o narzędziach AI, których użyliśmy do jej zbudowania:",
+
+    "footerText": "© 2023 Edukey AI. Wszelkie prawa zastrzeżone.",
+    "namePlaceholder": "Twoje imię",
+    "positionPlaceholder": "Twoje stanowisko",
+    "companyPlaceholder": "Nazwa firmy",
+    "countryPlaceholder": "Kraj",
+    "industryPlaceholder": "Branża",
+    "language": "PL",
+    "altText": "Cyberpunkowy szef kuchni tworzący rozwiązania AI w futurystycznej ulicy Tokio w nocy.",
+    "titleTag": "Edukey AI – Platforma przyspieszająca sprzedaż dzięki AI",
+    "metaDescription": "Dołącz do listy oczekujących Edukey AI i bądź pierwszym, który zrewolucjonizuje swoją sprzedaż i marketing dzięki naszej platformie zasilanej AI i trenerom w formie awatarów 3D."
+  },
+  "aiTools": {
+    "ChatGPT": {
+      "anchor": "Jak AI zbudowało tę stronę docelową + GPT-4 o1 (ręczne kopiuj/wklej)",
+      "url": "#"
+    },
+    "CopilotWorkspace": { "anchor": "GitHub Copilot Workspace", "url": "#" },
+    "CursorComposer": {
+      "anchor": "Cursor AI Composer + Cursor Tab",
+      "url": "#"
+    },
+    "AiderAndClaudeDev": { "anchor": "Aider i ClaudeDev (Cline)", "url": "#" }
+  }
+}
