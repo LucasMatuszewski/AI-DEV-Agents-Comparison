@@ -46,16 +46,27 @@ const defaultCountries: Country[] = [
   { code: 'UA', name: 'Ukraine' },
   { code: 'AE', name: 'United Arab Emirates' },
 ];
+
+const COUNTRIES_CACHE_KEY = 'countriesCache';
+
 export const fetchCountries = async (): Promise<Country[]> => {
+  const cachedCountries = localStorage.getItem(COUNTRIES_CACHE_KEY);
+  if (cachedCountries) {
+    return JSON.parse(cachedCountries);
+  }
+
   try {
     const response = await fetch('https://restcountries.com/v3.1/all');
     const data = await response.json();
-    return data
+    const countries = data
       .map((country: { cca2: string; name: { common: string } }) => ({
         code: country.cca2,
         name: country.name.common,
       }))
       .sort((a: Country, b: Country) => a.name.localeCompare(b.name));
+
+    localStorage.setItem(COUNTRIES_CACHE_KEY, JSON.stringify(countries));
+    return countries;
   } catch (error) {
     console.error('Error fetching countries:', error);
     return defaultCountries;

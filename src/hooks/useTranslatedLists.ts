@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useMessages } from 'next-intl';
+import { useMemo } from 'react';
 
 export enum ListNames {
   Positions = 'positions',
@@ -15,7 +16,8 @@ export const useTranslatedLists = (listName: ListNames): string[] => {
   const messages = useMessages() as Messages;
   const t = useTranslations(listName);
 
-  if (!messages[listName]) return [];
-
-  return Object.keys(messages[listName]).map((key) => t(key));
+  return useMemo(() => {
+    if (!messages[listName]) return [];
+    return Object.keys(messages[listName]).map((key) => t(key));
+  }, [messages, listName, t]);
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import type { Country } from '@/data/countries';
 import { fetchCountries } from '@/data/countries';
 import { useTranslatedLists, ListNames } from '@/hooks/useTranslatedLists';
@@ -31,6 +31,26 @@ export default function SubscriptionForm() {
     industry: '',
   });
   const [errors, setErrors] = useState<{ email?: string }>({});
+
+  const positionOptions = useMemo(
+    () =>
+      positions.map((position) => (
+        <option key={position} value={position}>
+          {position}
+        </option>
+      )),
+    [positions]
+  );
+
+  const industryOptions = useMemo(
+    () =>
+      industries.map((industry) => (
+        <option key={industry} value={industry}>
+          {industry}
+        </option>
+      )),
+    [industries]
+  );
 
   useEffect(() => {
     const loadCountries = async () => {
@@ -181,11 +201,7 @@ export default function SubscriptionForm() {
               className="w-full p-2 mb-2 text-black rounded-sm"
             >
               <option value="">{t('positionPlaceholder')}</option>
-              {positions.map((position) => (
-                <option key={position} value={position}>
-                  {position}
-                </option>
-              ))}
+              {positionOptions}
             </select>
             <select
               name="industry"
@@ -194,11 +210,7 @@ export default function SubscriptionForm() {
               className="w-full p-2 mb-2 text-black rounded-sm"
             >
               <option value="">{t('industryPlaceholder')}</option>
-              {industries.map((industry) => (
-                <option key={industry} value={industry}>
-                  {industry}
-                </option>
-              ))}
+              {industryOptions}
             </select>
           </div>
           <select
