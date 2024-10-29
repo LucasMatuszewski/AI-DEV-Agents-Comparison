@@ -19,11 +19,13 @@ const geistMono = localFont({
   weight: '100 900',
 });
 
+type LocaleLayoutParams = Promise<{
+  locale: Locales;
+}>;
+
 interface LocaleLayoutProps {
   children: ReactNode;
-  params: {
-    locale: Locales;
-  };
+  params: LocaleLayoutParams;
 }
 
 export async function generateStaticParams() {
@@ -33,7 +35,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locales };
+  params: LocaleLayoutParams;
 }) {
   // Await params to resolve dynamic values
   const { locale } = await params;
