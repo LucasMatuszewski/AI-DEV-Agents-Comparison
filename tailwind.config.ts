@@ -35,11 +35,35 @@ const config: Config = {
             transform: 'translateY(0)',
           },
         },
+        expandDown: {
+          '0%': {
+            opacity: '0',
+            transform: 'scaleY(0)',
+            transformOrigin: 'top',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scaleY(1)',
+            transformOrigin: 'top',
+          },
+        },
+        fadeOut: {
+          '0%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'translateY(-20px)',
+          },
+        },
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in-up-delay': 'fadeInUp 0.6s ease-out 0.3s forwards',
         'fade-in-up-delay-2': 'fadeInUp 0.6s ease-out 0.6s forwards',
+        'expand-down': 'expandDown 0.4s ease-out forwards',
+        'fade-out': 'fadeOut 0.4s ease-out forwards',
       },
     },
   },

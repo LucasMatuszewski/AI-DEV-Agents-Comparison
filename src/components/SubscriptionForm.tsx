@@ -131,7 +131,7 @@ export default function SubscriptionForm() {
   };
 
   return (
-    <>
+    <div className="relative">
       {(formStep === 1 || formStep === 2) && (
         <p className="mb-4 md:mb-6 text-center md:text-left">
           {t.rich('joinWaitingList', {
@@ -141,99 +141,115 @@ export default function SubscriptionForm() {
       )}
 
       {message && (
-        <p
-          className={`mb-4 p-4 rounded-sm ${
-            messageType === 'error'
-              ? 'bg-red-900 text-red-200'
-              : 'bg-blue-200 text-black'
+        <div className="animate-fade-in-up">
+          <p
+            className={`mb-4 p-4 rounded-sm ${
+              messageType === 'error'
+                ? 'bg-red-900 text-red-200'
+                : 'bg-blue-200 text-black'
+            }`}
+          >
+            {message}
+          </p>
+        </div>
+      )}
+
+      <div className="relative">
+        <div
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            formStep === 1
+              ? 'max-h-[200px] opacity-100 visible'
+              : 'max-h-0 opacity-0 invisible'
           }`}
         >
-          {message}
-        </p>
-      )}
+          <form onSubmit={handleEmailSubmit} className="mb-4">
+            <div className="flex flex-col md:flex-row">
+              <input
+                type="email"
+                name="email"
+                placeholder={t('emailPlaceholder')}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="p-2 text-black md:max-w-72 mb-2 md:mb-0 md:mr-2 rounded-sm"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-red hover:bg-red-300 rounded-sm text-white font-bold py-2 px-6 transition duration-300 ease-in-out whitespace-nowrap"
+              >
+                {t('joinButton')}
+              </button>
+            </div>
+            {errors.email && <p className="text-red mt-2">{errors.email}</p>}
+          </form>
+        </div>
 
-      {formStep === 1 && (
-        <form onSubmit={handleEmailSubmit} className="mb-4">
-          <div className="flex flex-col md:flex-row">
-            <input
-              type="email"
-              name="email"
-              placeholder={t('emailPlaceholder')}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="p-2 text-black md:max-w-72 mb-2 md:mb-0 md:mr-2 rounded-sm"
-              required
-            />
+        <div
+          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            formStep === 2
+              ? 'animate-expand-down max-h-[500px] opacity-100 visible'
+              : 'max-h-0 opacity-0 invisible'
+          }`}
+        >
+          <form onSubmit={handleAdditionalSubmit} className="mb-4">
+            <div className="md:grid md:grid-cols-2 md:gap-4">
+              <input
+                type="text"
+                name="name"
+                placeholder={t('namePlaceholder')}
+                value={additionalData.name}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 text-black rounded-sm"
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder={t('companyPlaceholder')}
+                value={additionalData.company}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 text-black rounded-sm"
+              />
+              <select
+                name="position"
+                value={additionalData.position}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 text-black rounded-sm"
+              >
+                <option value="">{t('positionPlaceholder')}</option>
+                {positionOptions}
+              </select>
+              <select
+                name="industry"
+                value={additionalData.industry}
+                onChange={handleChange}
+                className="w-full p-2 mb-2 text-black rounded-sm"
+              >
+                <option value="">{t('industryPlaceholder')}</option>
+                {industryOptions}
+              </select>
+            </div>
+            <select
+              name="country"
+              value={additionalData.country}
+              onChange={handleChange}
+              className="w-full p-2 md:my-3 text-black rounded-sm"
+            >
+              <option value="">{t('countryPlaceholder')}</option>
+              {countries.map((country) => (
+                <option key={country.code} value={country.code}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
             <button
               type="submit"
-              className="bg-red hover:bg-red-300 rounded-sm text-white font-bold py-2 px-6 transition duration-300 ease-in-out whitespace-nowrap"
+              className="bg-red hover:bg-red-700 text-white font-bold py-2 px-4 mt-2 transition duration-300 ease-in-out w-full rounded-sm"
             >
-              {t('joinButton')}
+              {t('tellUsMoreButton')}
             </button>
-          </div>
-          {errors.email && <p className="text-red mt-2">{errors.email}</p>}
-        </form>
-      )}
-
-      {formStep === 2 && (
-        <form onSubmit={handleAdditionalSubmit} className="mb-4">
-          <div className="md:grid md:grid-cols-2 md:gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder={t('namePlaceholder')}
-              value={additionalData.name}
-              onChange={handleChange}
-              className="w-full p-2 mb-2 text-black rounded-sm"
-            />
-            <input
-              type="text"
-              name="company"
-              placeholder={t('companyPlaceholder')}
-              value={additionalData.company}
-              onChange={handleChange}
-              className="w-full p-2 mb-2 text-black rounded-sm"
-            />
-            <select
-              name="position"
-              value={additionalData.position}
-              onChange={handleChange}
-              className="w-full p-2 mb-2 text-black rounded-sm"
-            >
-              <option value="">{t('positionPlaceholder')}</option>
-              {positionOptions}
-            </select>
-            <select
-              name="industry"
-              value={additionalData.industry}
-              onChange={handleChange}
-              className="w-full p-2 mb-2 text-black rounded-sm"
-            >
-              <option value="">{t('industryPlaceholder')}</option>
-              {industryOptions}
-            </select>
-          </div>
-          <select
-            name="country"
-            value={additionalData.country}
-            onChange={handleChange}
-            className="w-full p-2 md:my-3 text-black rounded-sm"
-          >
-            <option value="">{t('countryPlaceholder')}</option>
-            {countries.map((country) => (
-              <option key={country.code} value={country.code}>
-                {country.name}
-              </option>
-            ))}
-          </select>
-          <button
-            type="submit"
-            className="bg-red hover:bg-red-700 text-white font-bold py-2 px-4 mt-2 transition duration-300 ease-in-out w-full rounded-sm"
-          >
-            {t('tellUsMoreButton')}
-          </button>
-        </form>
-      )}
-    </>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

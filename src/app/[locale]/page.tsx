@@ -13,8 +13,8 @@ export default function LandingPage() {
         <LanguageToggle />
       </div>
 
-      <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col-reverse md:flex-row items-center flex-grow">
-        <div className="md:w-1/2 w-full opacity-0 animate-fade-in-up-delay-2 md:animate-fade-in-up">
+      <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col-reverse md:flex-row items-start flex-grow">
+        <div className="md:w-1/2 w-full mb-20 opacity-0 animate-fade-in-up-delay-2 md:animate-fade-in-up">
           <Image
             src="/images/1024px-Hero-Edukey-Cooking-AI-for-Sales-and-Marketing.jpg"
             alt={t('altText')}
