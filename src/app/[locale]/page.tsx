@@ -2,16 +2,20 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import LanguageToggle from '@/components/LanguageToggle';
-import MakingOf from '@/components/MaakingOf';
+// import MakingOf from '@/components/MaakingOf';
+import { positions } from '@/data/positions';
+import { industries } from '@/data/industries';
+import { Country, fetchCountries } from '@/data/countries';
 
 export default function LandingPage() {
   const t = useTranslations('HomePage');
   const [email, setEmail] = useState('');
   const [formStep, setFormStep] = useState(1);
   const [message, setMessage] = useState('');
+  const [countries, setCountries] = useState<Country[]>([]);
   const [additionalData, setAdditionalData] = useState({
     name: '',
     position: '',
@@ -28,9 +32,16 @@ export default function LandingPage() {
   // Once the request locale is set, you can call hooks from `next-intl`
   // const t = useTranslations('IndexPage');
 
+  useEffect(() => {
+    const loadCountries = async () => {
+      const countriesData = await fetchCountries();
+      setCountries(countriesData);
+    };
+    loadCountries();
+  }, []);
+
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
       setErrors({ email: t('emailValidationError') });
@@ -60,7 +71,6 @@ export default function LandingPage() {
 
   const handleAdditionalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // At least one field is required
     const { name, position, company, country, industry } = additionalData;
     if (!name && !position && !company && !country && !industry) {
       setMessage('Please fill at least one field.');
@@ -98,44 +108,41 @@ export default function LandingPage() {
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
-      {/* Language Toggle */}
-      <div className="flex justify-end p-4">
+      <div className="absolute top-0 right-0 z-10 p-4">
         <LanguageToggle />
       </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 flex flex-col-reverse md:flex-row items-center flex-grow">
-        {/* Left Side (Image) */}
+      <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col-reverse md:flex-row items-center flex-grow">
         <div className="md:w-1/2 w-full">
           <Image
             src="/images/1024px-Hero-Edukey-Cooking-AI-for-Sales-and-Marketing.jpg"
             alt={t('altText')}
             width={500}
             height={500}
-            className="object-cover w-full h-full md:object-center object-top"
+            priority
+            className="object-cover w-full h-full md:object-[center_center] object-[60%_40%]"
           />
         </div>
 
-        {/* Right Side (Text and Form) */}
         <div className="md:w-1/2 w-full md:pl-8">
-          {/* Logo and Tagline */}
-          <div className="flex items-center mb-4">
+          <div className="mb-4 md:mb-8">
             <Image
               src="/images/logo-edukey.svg"
               alt="Edukey Logo"
-              width={100}
-              height={40}
+              priority
+              width={400}
+              height={160}
+              className="w-[200px] md:w-[400px] h-auto mb-2 md:mb-4"
             />
-            <span className="ml-2 text-lg">{t('isCooking')}</span>
+            <span className="text-lg font-bold">{t('isCooking')}</span>
           </div>
 
-          {/* Header */}
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96">
             {t('headerTitle')
               .split(' ')
               .map((word, index) =>
                 word.toLowerCase() === 'acceleration' ||
-                word.toLowerCase() === 'przyspieszająca' ? (
+                word.toLowerCase() === 'akcelerująca' ? (
                   <span key={index} className="text-red">
                     {word}{' '}
                   </span>
@@ -145,94 +152,103 @@ export default function LandingPage() {
               )}
           </h1>
 
-          {/* Subtitle */}
-          <p className="mb-4">{t('headerSubtitle')}</p>
+          <p className="mb-4 md:mb-6">{t('headerSubtitle')}</p>
 
-          {/* Invitation */}
           {(formStep === 1 || formStep === 2) && (
-            <p className="mb-4">{t('joinWaitingList')}</p>
+            <p className="mb-4 md:mb-6">{t('joinWaitingList')}</p>
           )}
 
-          {/* Form or Message */}
-          {message && <p className="mb-4">{message}</p>}
+          {message && (
+            <p className="mb-4 p-4 text-black bg-red-900 rounded-sm">
+              {message}
+            </p>
+          )}
 
           {formStep === 1 && (
             <form onSubmit={handleEmailSubmit} className="mb-4">
-              <input
-                type="email"
-                name="email"
-                placeholder={t('emailPlaceholder')}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-2 mb-2 text-black"
-                required
-              />
-              {errors.email && <p className="text-red-600">{errors.email}</p>}
-              <button
-                type="submit"
-                className="bg-red hover:bg-red-700 text-white font-bold py-2 px-4 mt-2 transition duration-300 ease-in-out"
-              >
-                {t('joinButton')}
-              </button>
+              <div className="flex flex-col md:flex-row">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={t('emailPlaceholder')}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="p-2 text-black md:max-w-72 mb-2 md:mb-0 md:mr-2 rounded-sm"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-red hover:bg-red-300 rounded-sm text-white font-bold py-2 px-6 transition duration-300 ease-in-out whitespace-nowrap"
+                >
+                  {t('joinButton')}
+                </button>
+              </div>
+              {errors.email && <p className="text-red mt-2">{errors.email}</p>}
             </form>
           )}
 
           {formStep === 2 && (
             <form onSubmit={handleAdditionalSubmit} className="mb-4">
-              <input
-                type="text"
-                name="name"
-                placeholder={t('namePlaceholder')}
-                value={additionalData.name}
-                onChange={handleChange}
-                className="w-full p-2 mb-2 text-black"
-              />
-              <select
-                name="position"
-                value={additionalData.position}
-                onChange={handleChange}
-                className="w-full p-2 mb-2 text-black"
-              >
-                <option value="">{t('positionPlaceholder')}</option>
-                <option value="CEO">CEO</option>
-                <option value="CTO">CTO</option>
-                <option value="CMO">CMO</option>
-                <option value="Developer">Developer</option>
-                {/* Add more options as needed */}
-              </select>
-              <input
-                type="text"
-                name="company"
-                placeholder={t('companyPlaceholder')}
-                value={additionalData.company}
-                onChange={handleChange}
-                className="w-full p-2 mb-2 text-black"
-              />
+              <div className="md:grid md:grid-cols-2 md:gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder={t('namePlaceholder')}
+                  value={additionalData.name}
+                  onChange={handleChange}
+                  className="w-full p-2 mb-2 text-black rounded-sm"
+                />
+                <input
+                  type="text"
+                  name="company"
+                  placeholder={t('companyPlaceholder')}
+                  value={additionalData.company}
+                  onChange={handleChange}
+                  className="w-full p-2 mb-2 text-black rounded-sm"
+                />
+                <select
+                  name="position"
+                  value={additionalData.position}
+                  onChange={handleChange}
+                  className="w-full p-2 mb-2 text-black rounded-sm"
+                >
+                  <option value="">{t('positionPlaceholder')}</option>
+                  {positions.map((position) => (
+                    <option key={position} value={position}>
+                      {position}
+                    </option>
+                  ))}
+                </select>
+                <select
+                  name="industry"
+                  value={additionalData.industry}
+                  onChange={handleChange}
+                  className="w-full p-2 mb-2 text-black rounded-sm"
+                >
+                  <option value="">{t('industryPlaceholder')}</option>
+                  {industries.map((industry) => (
+                    <option key={industry} value={industry}>
+                      {industry}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <select
                 name="country"
                 value={additionalData.country}
                 onChange={handleChange}
-                className="w-full p-2 mb-2 text-black"
+                className="w-full p-2 md:my-3 text-black rounded-sm"
               >
                 <option value="">{t('countryPlaceholder')}</option>
-                <option value="US">United States</option>
-                <option value="PL">Poland</option>
-                {/* Add more countries or use a library */}
-              </select>
-              <select
-                name="industry"
-                value={additionalData.industry}
-                onChange={handleChange}
-                className="w-full p-2 mb-2 text-black"
-              >
-                <option value="">{t('industryPlaceholder')}</option>
-                <option value="Technology">Technology</option>
-                <option value="Healthcare">Healthcare</option>
-                {/* Add more options as needed */}
+                {countries.map((country) => (
+                  <option key={country.code} value={country.code}>
+                    {country.name}
+                  </option>
+                ))}
               </select>
               <button
                 type="submit"
-                className="bg-red hover:bg-red-700 text-white font-bold py-2 px-4 mt-2 transition duration-300 ease-in-out"
+                className="bg-red hover:bg-red-700 text-white font-bold py-2 px-4 mt-2 transition duration-300 ease-in-out w-full rounded-sm"
               >
                 {t('tellUsMoreButton')}
               </button>
@@ -241,21 +257,22 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Making of Section */}
-      <div className="text-center py-8">
-        <p>{t('makingOfText')}</p>
+      {/* TODO: in Payload add Blog section here */}
+      {/* <div className="container mx-auto px-4 py-8">
         <MakingOf />
-      </div>
+      </div> */}
 
-      {/* Footer */}
-      <footer className="text-center py-4 border-t border-gray-700">
-        <Image
-          src="/images/logo-edukey.svg"
-          alt="Edukey Logo"
-          width={80}
-          height={32}
-        />
-        <p>{t('footerText')}</p>
+      <footer className="mt-auto py-6 border-t border-gray-800">
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <Image
+            src="/images/logo-edukey.svg"
+            alt="Edukey Logo"
+            width={120}
+            height={48}
+            className="w-[120px] h-auto mb-4"
+          />
+          <p className="text-gray-400">{t('footerText')}</p>
+        </div>
       </footer>
     </div>
   );

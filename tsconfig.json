@@ -23,7 +23,8 @@
     "paths": {
       "@/i18n/*": ["src/i18n/*"],
       "@/components/*": ["src/components/*"],
-      "@/app/*": ["src/app/*"]
+      "@/app/*": ["src/app/*"],
+      "@/data/*": ["src/data/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
