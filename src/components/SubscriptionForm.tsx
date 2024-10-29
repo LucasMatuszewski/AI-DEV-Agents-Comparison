@@ -133,7 +133,7 @@ export default function SubscriptionForm() {
   return (
     <>
       {(formStep === 1 || formStep === 2) && (
-        <p className="mb-4 md:mb-6">
+        <p className="mb-4 md:mb-6 text-center md:text-left">
           {t.rich('joinWaitingList', {
             bold: (chunks) => <strong>{chunks}</strong>,
           })}

@@ -25,8 +25,8 @@ export default function LandingPage() {
           />
         </div>
 
-        <div className="md:w-1/2 w-full md:pl-8">
-          <div className="mb-4 md:mb-8">
+        <div className="md:w-1/2 w-full md:pl-8 text-center md:text-left">
+          <div className="mb-4 md:mb-8 flex flex-col items-center md:items-start">
             <Image
               src="/images/logo-edukey.svg"
               alt="Edukey Logo"
@@ -38,7 +38,7 @@ export default function LandingPage() {
             <span className="text-lg font-bold">{t('isCooking')}</span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96 mx-auto md:mx-0">
             {t.rich('headerTitle', {
               red: (chunks) => <span className="text-red">{chunks}</span>,
             })}
