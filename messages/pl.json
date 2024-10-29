@@ -2,9 +2,9 @@
   "HomePage": {
     "isCooking": "is cooking...",
     "headerTitle": "Platforma AI <red>Akcelerująca</red> Sprzedaż i Marketing",
-    "headerSubtitle": "Dołącz do pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki <bold>osobistym trenerom AI</bold> (realistyczne awatary 3D) i najnowocześniejszym narzędziom <bold>automatyzacji AI</bold>.",
+    "headerSubtitle": "Bądź wśród pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki <bold>Personalnym Trenerom AI</bold> (realistyczne awatary 3D) i najnowocześniejszym narzędziom <bold>AI do automatyzacji</bold>.",
     "makingOfText": "Ta strona została stworzona dzięki mocy AI. Przeczytaj o narzędziach AI, których użyliśmy do jej zbudowania:",
-    "footerText": "© 2023 Edukey AI. Wszelkie prawa zastrzeżone.",
+    "footerText": "Edukey AI. Wszelkie prawa zastrzeżone.",
     "language": "PL",
     "altText": "Cyberpunkowy szef kuchni tworzący rozwiązania AI w futurystycznej ulicy Tokio w nocy.",
     "titleTag": "Edukey - Platforma AI Akcelerująca Sprzedaż",
@@ -23,12 +23,12 @@
     "AiderAndClaudeDev": { "anchor": "Aider i ClaudeDev (Cline)", "url": "#" }
   },
   "Forms": {
-    "joinWaitingList": "Dołącz do naszej <bold>listy oczekujących</bold> i wkrocz w przyszłość:",
+    "joinWaitingList": "Dołącz do naszej <bold>listy oczekujących</bold>:",
     "emailPlaceholder": "Twój email*",
     "joinButton": "Dołącz do rewolucji!",
     "tellUsMoreButton": "Dołączcie mnie szybko do Beta Testów!",
     "emailValidationError": "Proszę podać prawidłowy adres e-mail.",
-    "thankYouMessage": "Dziękujemy! Zapisaliśmy Twój email. Czy możesz powiedzieć nam o sobie trochę więcej? Wybrane osoby zaprosimy wcześniej do zamkniętych Beta Testów naszej platformy AI.",
+    "thankYouMessage": "Świetnie! Jesteś z nami! 🎉 Chcesz być wśród pierwszych, którzy dołączą do Beta Testów? Opowiedz nam trochę o sobie - tworzymy coś wyjątkowego dla pionierów takich jak Ty!",
     "thankYouAgainMessage": "Jeszcze raz dziękujemy! Jesteś na naszej liście oczekujących i będziemy się z Tobą kontaktować jak tylko będziemy mieć więcej informacji o Beta Testach.",
     "namePlaceholder": "Twoje imię",
     "positionPlaceholder": "Twoje stanowisko",
@@ -40,7 +40,7 @@
     "apiErrors": {
       "emailRequired": "Email jest wymagany",
       "emailNotFound": "Email nie znaleziony",
-      "emailAlreadyRegistered": "Twój email jest już na naszej liście oczekujących, dziękujemy! Czy chcesz zaktualizować poniższe dane, aby otrzymać wcześniejszy dostęp do zamkniętych testów Beta?",
+      "emailAlreadyRegistered": "Twój email jest już na naszej liście oczekujących, dziękujemy! Czy chcesz zaktualizować poniższe dane, aby otrzymać wcześniejszy dostęp do zamkniętych Testów Beta?",
       "internalServerError": "Błąd serwera"
     }
   },

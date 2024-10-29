@@ -132,13 +132,17 @@ export default function SubscriptionForm() {
 
   return (
     <div className="relative">
-      {(formStep === 1 || formStep === 2) && (
-        <p className="mb-4 md:mb-6 text-center md:text-left">
-          {t.rich('joinWaitingList', {
-            bold: (chunks) => <strong>{chunks}</strong>,
-          })}
-        </p>
-      )}
+      <p
+        className={`mb-4 md:mb-6 text-center md:text-left overflow-hidden transition-all duration-500 ease-in-out ${
+          formStep === 1 || formStep === 2
+            ? 'max-h-[200px] opacity-100 visible'
+            : 'max-h-0 opacity-0 invisible'
+        }`}
+      >
+        {t.rich('joinWaitingList', {
+          bold: (chunks) => <strong>{chunks}</strong>,
+        })}
+      </p>
 
       {message && (
         <div className="animate-fade-in-up">
@@ -185,9 +189,9 @@ export default function SubscriptionForm() {
         </div>
 
         <div
-          className={`transition-all duration-500 ease-in-out overflow-hidden ${
+          className={`transition-all duration-500 ease-in-out overflow-hidden animate-expand-down ${
             formStep === 2
-              ? 'animate-expand-down max-h-[500px] opacity-100 visible'
+              ? 'max-h-[500px] opacity-100 visible'
               : 'max-h-0 opacity-0 invisible'
           }`}
         >

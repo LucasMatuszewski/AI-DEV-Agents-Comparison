@@ -39,7 +39,7 @@ export default function LandingPage() {
           </div>
 
           <div className="opacity-0 animate-fade-in-up-delay md:animate-fade-in-up-delay-2">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96 mx-auto md:mx-0">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-[28rem] mx-auto md:mx-0">
               {t.rich('headerTitle', {
                 red: (chunks) => <span className="text-red">{chunks}</span>,
               })}
@@ -67,7 +67,9 @@ export default function LandingPage() {
             height={48}
             className="w-[120px] h-auto mb-4"
           />
-          <p className="text-gray-400">{t('footerText')}</p>
+          <p className="text-gray-400">
+            {`© ${new Date().getFullYear().toString()} ${t('footerText')}`}
+          </p>
         </div>
       </footer>
     </div>
