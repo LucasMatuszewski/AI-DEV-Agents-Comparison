@@ -16,10 +16,11 @@ type FormData = {
 };
 
 export default function SubscriptionForm() {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('Forms');
   const [email, setEmail] = useState('');
   const [formStep, setFormStep] = useState(1);
   const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState<'error' | 'success'>('error');
   const [countries, setCountries] = useState<Country[]>([]);
   const [additionalData, setAdditionalData] = useState<FormData>({
     name: '',
@@ -53,15 +54,19 @@ export default function SubscriptionForm() {
         headers: { 'Content-Type': 'application/json' },
       });
       const result = await response.json();
+
       if (response.ok) {
-        setMessage(t('thankYouMessage'));
+        setMessage(t(result.message));
+        setMessageType('success');
         setFormStep(2);
       } else {
-        setMessage(result.error || t('genericError'));
+        setMessage(t(result.error));
+        setMessageType('error');
       }
     } catch (error) {
       console.error(error);
-      setMessage(t('genericError'));
+      setMessage(t('apiErrors.internalServerError'));
+      setMessageType('error');
     }
   };
 
@@ -70,6 +75,7 @@ export default function SubscriptionForm() {
     const { name, position, company, country, industry } = additionalData;
     if (!name && !position && !company && !country && !industry) {
       setMessage(t('fillOneFieldError'));
+      setMessageType('error');
       return;
     }
     try {
@@ -81,13 +87,16 @@ export default function SubscriptionForm() {
       const result = await response.json();
       if (response.ok) {
         setMessage(t('thankYouAgainMessage'));
+        setMessageType('success');
         setFormStep(3);
       } else {
-        setMessage(result.error || t('genericError'));
+        setMessage(t(result.error || 'apiErrors.internalServerError'));
+        setMessageType('error');
       }
     } catch (error) {
       console.error(error);
-      setMessage(t('genericError'));
+      setMessage(t('apiErrors.internalServerError'));
+      setMessageType('error');
     }
   };
 
@@ -111,7 +120,15 @@ export default function SubscriptionForm() {
       )}
 
       {message && (
-        <p className="mb-4 p-4 text-black bg-red-900 rounded-sm">{message}</p>
+        <p
+          className={`mb-4 p-4 rounded-sm ${
+            messageType === 'error'
+              ? 'bg-red-900 text-red-200'
+              : 'bg-blue-200 text-black'
+          }`}
+        >
+          {message}
+        </p>
       )}
 
       {formStep === 1 && (
