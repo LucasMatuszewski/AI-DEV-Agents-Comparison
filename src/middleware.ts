@@ -9,5 +9,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Apply middleware to the root and locale-based paths
-  matcher: ['/', '/(en|pl)/:path*'],
+  matcher: ['/', '/(en|pl|pt)/:path*'],
 };

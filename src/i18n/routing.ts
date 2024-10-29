@@ -5,6 +5,7 @@ import { createNavigation } from 'next-intl/navigation';
 export enum Locales {
   en = 'en',
   pl = 'pl',
+  pt = 'pt',
 }
 
 // Define the supported locales and the default locale
