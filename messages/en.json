@@ -20,7 +20,9 @@
     "companyPlaceholder": "Company name",
     "countryPlaceholder": "Country",
     "industryPlaceholder": "Industry",
-    "altText": "Cyberpunk chef crafting AI solutions for Sales and Marketing in a futuristic Tokyo street at night."
+    "altText": "Cyberpunk chef crafting AI solutions for Sales and Marketing in a futuristic Tokyo street at night.",
+    "genericError": "An error occurred. Please try again later.",
+    "fillOneFieldError": "Please fill at least one field."
   },
   "aiTools": {
     "ChatGPT": {

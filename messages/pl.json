@@ -20,7 +20,9 @@
     "language": "PL",
     "altText": "Cyberpunkowy szef kuchni tworzący rozwiązania AI w futurystycznej ulicy Tokio w nocy.",
     "titleTag": "Edukey - Platforma AI Akcelerująca Sprzedaż",
-    "metaDescription": "Dołącz do listy oczekujących Edukey AI i bądź pierwszym, który zrewolucjonizuje swoją sprzedaż i marketing dzięki naszej platformie zasilanej AI i trenerom w formie awatarów 3D."
+    "metaDescription": "Dołącz do listy oczekujących Edukey AI i bądź pierwszym, który zrewolucjonizuje swoją sprzedaż i marketing dzięki naszej platformie zasilanej AI i trenerom w formie awatarów 3D.",
+    "genericError": "Wystąpił błąd. Proszę spróbować ponownie później.",
+    "fillOneFieldError": "Proszę wypełnić przynajmniej jedno pole."
   },
   "aiTools": {
     "ChatGPT": {
