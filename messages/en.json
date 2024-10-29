@@ -46,5 +46,44 @@
       "emailAlreadyRegistered": "Your email is already on our waiting list, thank you! Do you want to update any of below data to get earlier to our closed Beta Tests?",
       "internalServerError": "Internal server error"
     }
+  },
+  "positions": {
+    "C-Level Executive": "C-Level Executive",
+    "Co-Founder / Entrepreneur": "Co-Founder / Entrepreneur",
+    "Director": "Director",
+    "Manager": "Manager",
+    "Team Leader": "Team Leader",
+    "Specialist": "Specialist",
+    "Junior Position": "Junior Position",
+    "Other": "Other"
+  },
+  "industries": {
+    "AI, Machine Learning & Robotics": "AI, Machine Learning & Robotics",
+    "Agriculture": "Agriculture",
+    "Biotechnology": "Biotechnology",
+    "Construction & Architecture": "Construction & Architecture",
+    "Consulting": "Consulting",
+    "Customer Service & Support": "Customer Service & Support",
+    "E-commerce": "E-commerce",
+    "Energy, Mining & Utilities": "Energy, Mining & Utilities",
+    "Education & Training": "Education & Training",
+    "Finance & Insurance": "Finance & Insurance",
+    "Government & Public Sector": "Government & Public Sector",
+    "Human Resources & Recruitment": "Human Resources & Recruitment",
+    "Healthcare": "Healthcare",
+    "Information & Communication Technology": "Information & Communication Technology",
+    "Manufacturing": "Manufacturing",
+    "Marketing & Advertising": "Marketing & Advertising",
+    "Media & Entertainment": "Media & Entertainment",
+    "Non-Profit": "Non-Profit",
+    "Professional Services": "Professional Services",
+    "Real Estate": "Real Estate",
+    "Retail & Consumer Goods": "Retail & Consumer Goods",
+    "SaaS": "SaaS",
+    "Science & Technology": "Science & Technology",
+    "Sports & Recreation": "Sports & Recreation",
+    "Transportation & Logistics": "Transportation & Logistics",
+    "Travel & Hospitality": "Travel & Hospitality",
+    "Other": "Other"
   }
 }

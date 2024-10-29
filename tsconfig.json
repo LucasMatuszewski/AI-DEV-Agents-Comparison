@@ -24,7 +24,10 @@
       "@/i18n/*": ["src/i18n/*"],
       "@/components/*": ["src/components/*"],
       "@/app/*": ["src/app/*"],
-      "@/data/*": ["src/data/*"]
+      "@/data/*": ["src/data/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/hooks/*": ["src/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

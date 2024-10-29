@@ -4,8 +4,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import type { Country } from '@/data/countries';
 import { fetchCountries } from '@/data/countries';
-import { positions } from '@/data/positions';
-import { industries } from '@/data/industries';
+import { useTranslatedLists, ListNames } from '@/hooks/useTranslatedLists';
 
 type FormData = {
   name: string;
@@ -17,6 +16,8 @@ type FormData = {
 
 export default function SubscriptionForm() {
   const t = useTranslations('Forms');
+  const positions = useTranslatedLists(ListNames.Positions);
+  const industries = useTranslatedLists(ListNames.Industries);
   const [email, setEmail] = useState('');
   const [formStep, setFormStep] = useState(1);
   const [message, setMessage] = useState('');

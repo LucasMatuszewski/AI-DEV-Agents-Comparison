@@ -43,5 +43,44 @@
       "emailAlreadyRegistered": "Twój email jest już na naszej liście oczekujących, dziękujemy! Czy chcesz zaktualizować poniższe dane, aby otrzymać wcześniejszy dostęp do zamkniętych testów Beta?",
       "internalServerError": "Błąd serwera"
     }
+  },
+  "positions": {
+    "C-Level Executive": "C-Level, Zarząd, Rada Nadzorcza",
+    "Co-Founder / Entrepreneur": "Współzałożyciel / Przedsiębiorca",
+    "Director": "Dyrektor",
+    "Manager": "Kierownik",
+    "Team Leader": "Lider Zespołu",
+    "Specialist": "Specjalista",
+    "Junior Position": "Stanowisko Juniorskie",
+    "Other": "Inne"
+  },
+  "industries": {
+    "AI, Machine Learning & Robotics": "AI, Machine Learning i Robotyka",
+    "Agriculture": "Rolnictwo",
+    "Biotechnology": "Biotechnologia",
+    "Construction & Architecture": "Budownictwo i Architektura",
+    "Consulting": "Consulting, Doradztwo",
+    "Customer Service & Support": "Obsługa i Wsparcie Klienta",
+    "E-commerce": "E-commerce",
+    "Energy, Mining & Utilities": "Energia, Górnictwo i Dostawcy Mediów",
+    "Education & Training": "Edukacja i Szkolenia",
+    "Finance & Insurance": "Finanse i Ubezpieczenia",
+    "Government & Public Sector": "Sektor Rządowy i Publiczny",
+    "Human Resources & Recruitment": "HR i Rekrutacja",
+    "Healthcare": "Ochrona Zdrowia",
+    "Information & Communication Technology": "Technologie Informacyjne i Komunikacyjne",
+    "Manufacturing": "Produkcja",
+    "Marketing & Advertising": "Marketing i Reklama",
+    "Media & Entertainment": "Media i Rozrywka",
+    "Non-Profit": "Organizacje Non-Profit",
+    "Professional Services": "Usługi Profesjonalne",
+    "Real Estate": "Nieruchomości",
+    "Retail & Consumer Goods": "Handel Detaliczny i Dobra Konsumpcyjne",
+    "SaaS": "SaaS",
+    "Science & Technology": "Nauka i Technologia",
+    "Sports & Recreation": "Sport i Rekreacja",
+    "Transportation & Logistics": "Transport i Logistyka",
+    "Travel & Hospitality": "Turystyka i Hotelarstwo",
+    "Other": "Inne"
   }
 }
