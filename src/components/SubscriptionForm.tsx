@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import type { Country } from '@/data/countries';
 import { fetchCountries } from '@/data/countries';
 import { useTranslatedLists, ListNames } from '@/hooks/useTranslatedLists';
@@ -31,6 +31,7 @@ export default function SubscriptionForm() {
     industry: '',
   });
   const [errors, setErrors] = useState<{ email?: string }>({});
+  const formRef = useRef<HTMLDivElement>(null);
 
   const positionOptions = useMemo(
     () =>
@@ -130,8 +131,21 @@ export default function SubscriptionForm() {
     });
   };
 
+  useEffect(() => {
+    if (formStep === 2 && formRef.current) {
+      const yOffset = -20; // Offset to account for spacing
+      const y =
+        formRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth',
+      });
+    }
+  }, [formStep]);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={formRef}>
       <p
         className={`mb-4 md:mb-6 text-center md:text-left overflow-hidden transition-all duration-500 ease-in-out ${
           formStep === 1 || formStep === 2
