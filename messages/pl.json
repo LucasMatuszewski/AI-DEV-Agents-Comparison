@@ -1,14 +1,14 @@
 {
   "HomePage": {
     "isCooking": "is cooking...",
-    "headerTitle": "Platforma AI <red>Akcelerująca</red> Sprzedaż i Marketing",
+    "headerTitle": "Platforma AI <red>Akcelerująca</red> Sprzedaż\u00a0i\u00a0Marketing",
     "headerSubtitle": "Bądź wśród pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki <bold>Personalnym Trenerom AI</bold> (realistyczne awatary 3D) i najnowocześniejszym narzędziom <bold>AI do automatyzacji</bold>.",
     "makingOfText": "Ta strona została stworzona dzięki mocy AI. Przeczytaj o narzędziach AI, których użyliśmy do jej zbudowania:",
     "footerText": "Edukey AI. Wszelkie prawa zastrzeżone.",
     "language": "PL",
     "altText": "Cyberpunkowy szef kuchni tworzący rozwiązania AI w futurystycznej ulicy Tokio w nocy.",
-    "titleTag": "Edukey - Platforma AI Akcelerująca Sprzedaż",
-    "metaDescription": "Dołącz do listy oczekujących Edukey AI i bądź pierwszym, który zrewolucjonizuje swoją sprzedaż i marketing dzięki naszej platformie zasilanej AI i trenerom w formie awatarów 3D."
+    "titleTag": "Edukey - Personalni Trenerzy AI & Platforma Akceleracji Sprzedaży",
+    "metaDescription": "Dołącz do listy oczekujących Edukey AI i bądź pierwszym, który zrewolucjonizuje swoją sprzedaż i marketing dzięki naszej platformie zasilanej AI i trenerami w formie awatarów 3D."
   },
   "aiTools": {
     "ChatGPT": {
@@ -29,7 +29,7 @@
     "tellUsMoreButton": "Dołączcie mnie szybko do Beta Testów!",
     "emailValidationError": "Proszę podać prawidłowy adres e-mail.",
     "thankYouMessage": "Świetnie! Jesteś z nami! 🎉 Chcesz być wśród pierwszych, którzy dołączą do Beta Testów? Opowiedz nam trochę o sobie - tworzymy coś wyjątkowego dla pionierów takich jak Ty!",
-    "thankYouAgainMessage": "Jeszcze raz dziękujemy! Jesteś na naszej liście oczekujących i będziemy się z Tobą kontaktować jak tylko będziemy mieć więcej informacji o Beta Testach.",
+    "thankYouAgainMessage": "Jeszcze raz dziękujemy! Jesteś na naszej liście oczekujących i będziemy się z Tobą kontaktować jak tylko będziemy mieć więcej informacji o Beta Testach. Prosimy o cierpliwość.",
     "namePlaceholder": "Twoje imię",
     "positionPlaceholder": "Twoje stanowisko",
     "companyPlaceholder": "Nazwa firmy",

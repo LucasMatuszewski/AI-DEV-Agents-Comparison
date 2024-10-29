@@ -26,7 +26,7 @@ export default function LanguageToggle() {
     <select
       value={currentLocale}
       onChange={handleChange}
-      className="bg-black text-white p-1"
+      className="bg-black text-white p-1 cursor-pointer"
       aria-label="Select Language"
     >
       {locales.map((locale: Locales) => (
