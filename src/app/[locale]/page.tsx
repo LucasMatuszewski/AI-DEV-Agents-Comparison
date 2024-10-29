@@ -14,7 +14,7 @@ export default function LandingPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col-reverse md:flex-row items-center flex-grow">
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 w-full opacity-0 animate-fade-in-up-delay-2 md:animate-fade-in-up">
           <Image
             src="/images/1024px-Hero-Edukey-Cooking-AI-for-Sales-and-Marketing.jpg"
             alt={t('altText')}
@@ -26,7 +26,7 @@ export default function LandingPage() {
         </div>
 
         <div className="md:w-1/2 w-full md:pl-8 text-center md:text-left">
-          <div className="mb-4 md:mb-8 flex flex-col items-center md:items-start">
+          <div className="mb-4 md:mb-8 flex flex-col items-center md:items-start opacity-0 animate-fade-in-up md:animate-fade-in-up-delay">
             <Image
               src="/images/logo-edukey.svg"
               alt="Edukey Logo"
@@ -38,19 +38,21 @@ export default function LandingPage() {
             <span className="text-lg font-bold">{t('isCooking')}</span>
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96 mx-auto md:mx-0">
-            {t.rich('headerTitle', {
-              red: (chunks) => <span className="text-red">{chunks}</span>,
-            })}
-          </h1>
+          <div className="opacity-0 animate-fade-in-up-delay md:animate-fade-in-up-delay-2">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96 mx-auto md:mx-0">
+              {t.rich('headerTitle', {
+                red: (chunks) => <span className="text-red">{chunks}</span>,
+              })}
+            </h1>
 
-          <p className="mb-4 md:mb-6">
-            {t.rich('headerSubtitle', {
-              bold: (chunks) => <strong>{chunks}</strong>,
-            })}
-          </p>
+            <p className="mb-4 md:mb-6">
+              {t.rich('headerSubtitle', {
+                bold: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
 
-          <SubscriptionForm />
+            <SubscriptionForm />
+          </div>
         </div>
       </div>
 
