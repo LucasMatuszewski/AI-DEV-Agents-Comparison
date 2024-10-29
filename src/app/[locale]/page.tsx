@@ -138,24 +138,23 @@ export default function LandingPage() {
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-12 max-w-96">
-            {t('headerTitle')
-              .split(' ')
-              .map((word, index) =>
-                word.toLowerCase() === 'acceleration' ||
-                word.toLowerCase() === 'akcelerująca' ? (
-                  <span key={index} className="text-red">
-                    {word}{' '}
-                  </span>
-                ) : (
-                  <span key={index}>{word} </span>
-                )
-              )}
+            {t.rich('headerTitle', {
+              red: (chunks) => <span className="text-red">{chunks}</span>,
+            })}
           </h1>
 
-          <p className="mb-4 md:mb-6">{t('headerSubtitle')}</p>
+          <p className="mb-4 md:mb-6">
+            {t.rich('headerSubtitle', {
+              bold: (chunks) => <strong>{chunks}</strong>,
+            })}
+          </p>
 
           {(formStep === 1 || formStep === 2) && (
-            <p className="mb-4 md:mb-6">{t('joinWaitingList')}</p>
+            <p className="mb-4 md:mb-6">
+              {t.rich('joinWaitingList', {
+                bold: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
           )}
 
           {message && (

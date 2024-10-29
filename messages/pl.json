@@ -1,9 +1,9 @@
 {
   "HomePage": {
     "isCooking": "is cooking...",
-    "headerTitle": "Platforma AI Akcelerująca Sprzedaż i Marketing",
-    "headerSubtitle": "Dołącz do pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki osobistym trenerom AI (realistyczne awatary 3D) i najnowocześniejszym narzędziom automatyzacji AI.",
-    "joinWaitingList": "Dołącz do naszej listy oczekujących i wkrocz w przyszłość:",
+    "headerTitle": "Platforma AI <red>Akcelerująca</red> Sprzedaż i Marketing",
+    "headerSubtitle": "Dołącz do pierwszych, którzy doświadczą naszej nowatorskiej platformy AI, rewolucjonizującej sprzedaż i marketing dzięki <bold>osobistym trenerom AI</bold> (realistyczne awatary 3D) i najnowocześniejszym narzędziom <bold>automatyzacji AI</bold>.",
+    "joinWaitingList": "Dołącz do naszej <bold>listy oczekujących</bold> i wkrocz w przyszłość:",
     "emailPlaceholder": "Twój email*",
     "joinButton": "Dołącz do rewolucji!",
     "tellUsMoreButton": "Dołączcie mnie szybko do Beta Testów!",
@@ -11,7 +11,6 @@
     "thankYouMessage": "Dziękujemy! Zapisaliśmy Twój email. Czy możesz powiedzieć nam o sobie trochę więcej? Wybrane osoby zaprosimy wcześniej do zamkniętych Beta Testów naszej platformy AI.",
     "thankYouAgainMessage": "Jeszcze raz dziękujemy! Jesteś na naszej liście oczekujących i będziemy się z Tobą kontaktować jak tylko będziemy mieć więcej informacji o Beta Testach.",
     "makingOfText": "Ta strona została stworzona dzięki mocy AI. Przeczytaj o narzędziach AI, których użyliśmy do jej zbudowania:",
-
     "footerText": "© 2023 Edukey AI. Wszelkie prawa zastrzeżone.",
     "namePlaceholder": "Twoje imię",
     "positionPlaceholder": "Twoje stanowisko",
