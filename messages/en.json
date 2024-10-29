@@ -9,10 +9,10 @@
     "joinWaitingList": "Join our waiting list and step into the future:",
     "emailPlaceholder": "Your email*",
     "joinButton": "Join the revolution!",
-    "tellUsMoreButton": "Tell Us More About You",
+    "tellUsMoreButton": "Add me quickly to Beta Tests!",
     "emailValidationError": "Please enter a valid email address.",
-    "thankYouMessage": "Thank you! We've saved your email. Please, could you tell us a bit more? It will help us decide who will be invited to the closed beta first.",
-    "thankYouAgainMessage": "Thank you again! You are on our waiting list",
+    "thankYouMessage": "Thank you! We've saved your email. Please, could you tell us a bit more? It will help us decide who will be invited to the Closed Beta first.",
+    "thankYouAgainMessage": "Thank you again! You are on our waiting list and we will contact you as soon as we have more information about Beta Tests.",
     "makingOfText": "This page was crafted with the power of AI. Read about the AI tools we used to build it:",
     "footerText": "© 2023 Edukey AI. All rights reserved.",
     "namePlaceholder": "Your name",
@@ -20,7 +20,7 @@
     "companyPlaceholder": "Company name",
     "countryPlaceholder": "Country",
     "industryPlaceholder": "Industry",
-    "altText": "Cyberpunk chef crafting AI solutions in a futuristic Tokyo street at night."
+    "altText": "Cyberpunk chef crafting AI solutions for Sales and Marketing in a futuristic Tokyo street at night."
   },
   "aiTools": {
     "ChatGPT": {
