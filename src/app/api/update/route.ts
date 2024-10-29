@@ -9,20 +9,21 @@ interface UpdateRequestBody {
   country?: string;
   industry?: string;
 }
+
 export async function POST(request: Request) {
   const data = (await request.json()) as UpdateRequestBody;
   const { email, ...additionalData } = data;
 
   if (!email) {
-    return NextResponse.json({ error: 'Email is required' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'apiErrors.emailRequired' },
+      { status: 400 }
+    );
   }
 
   // At least one field is required
   if (Object.values(additionalData).every((value) => !value)) {
-    return NextResponse.json(
-      { error: 'At least one field is required' },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: 'fillOneFieldError' }, { status: 400 });
   }
 
   const client = new MongoClient(process.env.DATABASE_URI || '');
@@ -34,21 +35,24 @@ export async function POST(request: Request) {
     // Update existing document
     const result = await collection.updateOne(
       { email },
-      { $set: additionalData }
+      { $set: { ...additionalData, updatedAt: new Date() } }
     );
 
     if (result.matchedCount === 0) {
-      return NextResponse.json({ error: 'Email not found' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'apiErrors.emailNotFound' },
+        { status: 404 }
+      );
     }
 
     return NextResponse.json(
-      { message: 'Information updated' },
+      { message: 'thankYouAgainMessage' },
       { status: 200 }
     );
   } catch (error) {
     console.error('Error in /api/update:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'apiErrors.internalServerError' },
       { status: 500 }
     );
   } finally {
