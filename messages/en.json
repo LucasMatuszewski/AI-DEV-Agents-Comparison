@@ -42,6 +42,7 @@
     "fillOneFieldError": "Please fill at least one field.",
     "apiErrors": {
       "emailRequired": "Email is required",
+      "emailNotFound": "Email not found",
       "emailAlreadyRegistered": "Your email is already on our waiting list, thank you! Do you want to update any of below data to get earlier to our closed Beta Tests?",
       "internalServerError": "Internal server error"
     }

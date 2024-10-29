@@ -39,6 +39,7 @@
     "genericError": "Coś poszło nie tak. Spróbuj ponownie później.",
     "apiErrors": {
       "emailRequired": "Email jest wymagany",
+      "emailNotFound": "Email nie znaleziony",
       "emailAlreadyRegistered": "Twój email jest już na naszej liście oczekujących, dziękujemy! Czy chcesz zaktualizować poniższe dane, aby otrzymać wcześniejszy dostęp do zamkniętych testów Beta?",
       "internalServerError": "Błąd serwera"
     }

@@ -21,6 +21,11 @@ export async function POST(request: Request) {
     );
   }
 
+  // Filter out empty strings from additionalData
+  const filteredData = Object.fromEntries(
+    Object.entries(additionalData).filter(([, value]) => value !== '')
+  );
+
   // At least one field is required
   if (Object.values(additionalData).every((value) => !value)) {
     return NextResponse.json({ error: 'fillOneFieldError' }, { status: 400 });
@@ -35,7 +40,7 @@ export async function POST(request: Request) {
     // Update existing document
     const result = await collection.updateOne(
       { email },
-      { $set: { ...additionalData, updatedAt: new Date() } }
+      { $set: { ...filteredData, updatedAt: new Date() } }
     );
 
     if (result.matchedCount === 0) {
