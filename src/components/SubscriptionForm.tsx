@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useEffect, useState, useMemo, useRef } from 'react';
 import type { Country } from '@/data/countries';
 import { fetchCountries } from '@/data/countries';
@@ -32,6 +32,8 @@ export default function SubscriptionForm() {
   });
   const [errors, setErrors] = useState<{ email?: string }>({});
   const formRef = useRef<HTMLDivElement>(null);
+
+  const locale = useLocale();
 
   const positionOptions = useMemo(
     () =>
@@ -72,7 +74,7 @@ export default function SubscriptionForm() {
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, locale }),
         headers: { 'Content-Type': 'application/json' },
       });
       const result = await response.json();

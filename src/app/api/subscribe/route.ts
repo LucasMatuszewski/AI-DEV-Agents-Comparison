@@ -1,12 +1,15 @@
 import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
+import type { Locales } from '@/i18n/routing';
 
 interface SubscribeRequestBody {
   email?: string;
+  locale?: Locales;
 }
 
 export async function POST(request: Request) {
-  const { email } = (await request.json()) as SubscribeRequestBody;
+  // const locale = await getLocale(); // from: import { getLocale } from 'next-intl/server'
+  const { email, locale } = (await request.json()) as SubscribeRequestBody;
 
   if (!email) {
     return NextResponse.json(
@@ -30,7 +33,7 @@ export async function POST(request: Request) {
       );
     }
 
-    await collection.insertOne({ email, createdAt: new Date() });
+    await collection.insertOne({ email, createdAt: new Date(), locale });
 
     return NextResponse.json({ message: 'thankYouMessage' }, { status: 201 });
   } catch (error) {
