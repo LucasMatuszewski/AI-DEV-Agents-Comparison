@@ -9,6 +9,16 @@ export default function LanguageToggle() {
   const pathname = usePathname();
   const params = useParams();
 
+  /* TODO: locale toggle/switcher example & email confirmation (with mydevil email server?)
+   * - analyze https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/LocaleSwitcherSelect.tsx
+   * - and https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/components/LocaleSwitcher.tsx
+   * - and routing with translated paths: https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/i18n/routing.ts
+   * - request with HMR fix for Turbopack: https://github.com/amannn/next-intl/blob/main/examples/example-app-router/src/i18n/request.ts
+   * - and use the best approach to switch language in this app (ask Sonnet/GPT)
+   *
+   * TODO: - Add email confirmation !!!
+   */
+
   // Extract the current locale from the URL parameters
   const currentLocale = (params.locale as Locales) || routing.defaultLocale;
 

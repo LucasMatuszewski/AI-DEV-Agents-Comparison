@@ -16,10 +16,10 @@ export default function LandingPage() {
       <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col-reverse md:flex-row items-start flex-grow">
         <div className="md:w-1/2 w-full mb-20 opacity-0 animate-fade-in-up-delay-2 md:animate-fade-in-up">
           <Image
-            src="/images/1024px-Hero-Edukey-Cooking-AI-for-Sales-and-Marketing.jpg"
+            src="/images/1024px-Hero-Edukey-Cooking-AI-for-Sales-and-Marketing.webp"
             alt={t('altText')}
-            width={500}
-            height={500}
+            width={624}
+            height={624}
             priority
             className="object-cover w-full h-full md:object-[center_center] object-[60%_40%]"
           />
